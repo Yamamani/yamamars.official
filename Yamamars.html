@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yamamars</title>
+    <link href="yamacss.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <nav class="nav-container">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        <label for="menu-toggle" class="menu-button">
+            <div class="hamburger-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <span class="menu-text"></span>
+        </label>
+
+        <label for="menu-toggle" class="menu-close-overlay"></label>
+
+        <ul class="menu-items" id="menu-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="center-box">
+        <img src="yamamarslogo.jpg" alt="yamamars logo" class="fade-in-top" style="max-width: 30%; height: auto;">
+    <h1 class="sliced-h1">
+        <span class="slice-yama">yam</span><span class="slice-ma">am</span><span class="slice-rs">ars</span>
+    </h1>
+    </div>
+
+    <p style="text-align: center;">ようこそ、ヤママーズへ</p>
+    
+    <div class="button-container">
+        <a href="#" class="btn_11">X</a>
+        <a href="#" class="btn_11">Pixiv</a>
+        <a href="#" class="btn_11">Youtube</a>
+        <a href="#" class="btn_11">Facebook</a>
+    </div>
+
+    <script>
+        const menuLinks = document.querySelectorAll('#menu-list a');
+        const toggle = document.getElementById('menu-toggle');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                toggle.checked = false;
+            });
+        });
+    </script>
+
+</body>
+</html>
