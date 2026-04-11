@@ -208,7 +208,30 @@ a.btn_11:active {
     /* アニメーションを瞬時に反応させる */
     transition: 0.1s;
 }
+.btn-fade-in {
+    opacity: 0; /* 最初は隠しておく */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
 
+/* 下から上に上がりながら現れる動き */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* 30px下から開始 */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);    /* 元の位置へ */
+    }
+}
+
+/* --- ボタンごとの時間差（遅延）設定 --- */
+/* 文字がフェードインし終わる頃（ロゴ開始から約1.5秒後〜）に開始させる */
+
+.btn-delay-1 { animation-delay: 1.5s; } /* 一番左 (X) */
+.btn-delay-2 { animation-delay: 1.7s; } /* 真ん中 (Pixiv) */
+.btn-delay-3 { animation-delay: 1.9s; } /* 一番右 (Youtube) */
+.btn-delay-4 { animation-delay: 2.1s; } /* 一番右 (Facebook) */
 /* =============================================
    5. ハンバーガーメニュー
    ============================================= */
