@@ -189,27 +189,21 @@ a.btn_11 {
 
 a.btn_11:hover {
     opacity: 0.8;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 4px 2px #02feed, 0 6px 8px #cecfd1;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 5px 4px 2px #04d8fd, 0 6px 8px #cecfd1;
 }
 a.btn_11:active {
-    /* 1. 下に少し沈ませる */
-    transform: translateY(2px);
-    
-    /* 2. 影を浅くして、押し込まれた感を出す */
+    transform: translateY(2px) !important;
     box-shadow: 
-        0 1px 1px 0px #7b0273, 
+        0 1px 1px 0px #02f8f0, 
         0 2px 3px #cecfd1, 
-        inset 0 0 4px 2px rgba(0, 0, 0, 0.1); /* 内側に少し影を入れて凹凸感を出す */
-    
-    /* 3. 背景のグラデーションを少し暗くして「押された」色味にする */
+        inset 0 0 4px 2px rgba(0, 0, 0, 0.1) !important;
     filter: brightness(0.95);
-    
-    /* アニメーションを瞬時に反応させる */
     transition: 0.1s;
 }
 .btn-fade-in {
-    opacity: 0; /* 最初は隠しておく */
+    opacity: 0;
+    pointer-events: none; /* 最初はクリック・ホバーを無効にする */
     animation: fadeInUp 0.8s ease-out forwards;
 }
 
@@ -217,21 +211,27 @@ a.btn_11:active {
 @keyframes fadeInUp {
     0% {
         opacity: 0;
-        transform: translateY(30px); /* 30px下から開始 */
+        transform: translateY(30px);
+        pointer-events: none; /* 開始時は無効 */
+    }
+    99% {
+        /* アニメーションが終わる直前まで無効を維持 */
+        pointer-events: none;
     }
     100% {
         opacity: 1;
-        transform: translateY(0);    /* 元の位置へ */
+        transform: translateY(0);
+        pointer-events: auto; /* ★完了した瞬間にクリック・ホバーを有効化！ */
     }
 }
 
 /* --- ボタンごとの時間差（遅延）設定 --- */
 /* 文字がフェードインし終わる頃（ロゴ開始から約1.5秒後〜）に開始させる */
 
-.btn-delay-1 { animation-delay: 1.5s; } /* 一番左 (X) */
-.btn-delay-2 { animation-delay: 1.7s; } /* 真ん中 (Pixiv) */
-.btn-delay-3 { animation-delay: 1.9s; } /* 一番右 (Youtube) */
-.btn-delay-4 { animation-delay: 2.1s; } /* 一番右 (Facebook) */
+.btn-delay-1 { animation-delay: 1.2s; } /* 一番左 (X) */
+.btn-delay-2 { animation-delay: 1.4s; } /* 真ん中 (Pixiv) */
+.btn-delay-3 { animation-delay: 1.6s; } /* 一番右 (Youtube) */
+.btn-delay-4 { animation-delay: 1.8s; } /* 一番右 (Facebook) */
 /* =============================================
    5. ハンバーガーメニュー
    ============================================= */
