@@ -1,4 +1,5 @@
 yamamars/
-├── index.html         # メインのHTMLファイル
+├── Yamamars.html      # メインのHTMLファイル
+├── yamajava.jss       #
 ├── yamacss.css        # スタイル、アニメーション、レスポンシブ設定
 └── yamamarslogo.jpg   # ロゴ画像
